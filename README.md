@@ -1,5 +1,5 @@
 # Calculadora - Windows Forms
-Calculadore desenvolvida em sala de aula e conceitos sobre git.  
+Calculadore desenvolvida em sala de aula e conceitos sobre github.  
 ## A calculadora em desenvolvimento deverá conter:  
 - Soma
 - Subtração
