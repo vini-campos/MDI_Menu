@@ -21,5 +21,39 @@ namespace Menu_Calculos.Formularios
         {
 
         }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+                
+        }
+
+        private void MDI_Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Deseja REALMENTE sair?", "Saindo...",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Mensagem(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            staHora.Text = "Data e Hora: " + DateTime.Now.ToString();
+        }
     }
 }

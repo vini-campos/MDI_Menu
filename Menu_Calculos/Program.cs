@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu_Calculos.Formularios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Menu_Calculos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCalculosBot());
+            Application.Run(new MDI_Menu());
         }
     }
 }

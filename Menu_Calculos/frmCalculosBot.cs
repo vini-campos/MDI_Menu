@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace Menu_Calculos
             InitializeComponent();
         }
         
+       
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -105,6 +107,8 @@ namespace Menu_Calculos
 
         private void btn_dividir_Click(object sender, EventArgs e)
         {
+            
+
             try
             {
                 double a = double.Parse(txtN1.Text); // var numérica
@@ -182,6 +186,21 @@ namespace Menu_Calculos
             {
                 MessageBox.Show("Só é permitido números neste campo!");
                 button2_Click(sender, e);
+            }
+        }
+
+        private void btn_dividir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo tecla = Console.ReadKey(intercept: true);
+                for(int i = 0; Console.KeyAvailable == true; i++)
+                { 
+                    if (tecla.Key == ConsoleKey.DownArrow)
+                    {
+                        btnSomar.Location = new Point(i);
+                    }
+                }
             }
         }
     }

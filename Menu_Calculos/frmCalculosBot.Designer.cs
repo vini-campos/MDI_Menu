@@ -168,6 +168,7 @@
             this.btn_dividir.Text = "&Dividir";
             this.btn_dividir.UseVisualStyleBackColor = true;
             this.btn_dividir.Click += new System.EventHandler(this.btn_dividir_Click);
+            this.btn_dividir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btn_dividir_KeyPress);
             // 
             // btnComparar
             // 
@@ -226,7 +227,6 @@
             this.calculatorPanel.Name = "calculatorPanel";
             this.calculatorPanel.Size = new System.Drawing.Size(777, 400);
             this.calculatorPanel.TabIndex = 13;
-            this.calculatorPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmCalculosBot
             // 
