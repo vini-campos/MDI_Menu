@@ -29,7 +29,9 @@ namespace Menu_Calculos.Formularios
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-                
+            frmCalculosBot objCalbot = new frmCalculosBot();
+            objCalbot.MdiParent = this;
+            objCalbot.Show();
         }
 
         private void MDI_Menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -54,6 +56,13 @@ namespace Menu_Calculos.Formularios
         private void timer1_Tick(object sender, EventArgs e)
         {
             staHora.Text = "Data e Hora: " + DateTime.Now.ToString();
+        }
+
+        private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalculosBot objCalbot = new frmCalculosBot();
+            objCalbot.MdiParent = this;
+            objCalbot.Show();
         }
     }
 }

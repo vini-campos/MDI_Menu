@@ -58,6 +58,12 @@
     <Compile Include="frmCalculosBot.Designer.cs">
       <DependentUpon>frmCalculosBot.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRadio.Designer.cs">
+      <DependentUpon>frmRadio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\MDI_Menu.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCalculosBot.resx">
       <DependentUpon>frmCalculosBot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRadio.resx">
+      <DependentUpon>frmRadio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
