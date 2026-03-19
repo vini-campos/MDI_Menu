@@ -168,7 +168,6 @@
             this.btn_dividir.Text = "&Dividir";
             this.btn_dividir.UseVisualStyleBackColor = true;
             this.btn_dividir.Click += new System.EventHandler(this.btn_dividir_Click);
-            this.btn_dividir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btn_dividir_KeyPress);
             // 
             // btnComparar
             // 

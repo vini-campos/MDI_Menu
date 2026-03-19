@@ -189,19 +189,6 @@ namespace Menu_Calculos
             }
         }
 
-        private void btn_dividir_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Console.KeyAvailable)
-            {
-                ConsoleKeyInfo tecla = Console.ReadKey(intercept: true);
-                for(int i = 0; Console.KeyAvailable == true; i++)
-                { 
-                    if (tecla.Key == ConsoleKey.DownArrow)
-                    {
-                        btnSomar.Location = new Point(i);
-                    }
-                }
-            }
-        }
+        
     }
 }

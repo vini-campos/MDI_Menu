@@ -24,7 +24,68 @@ namespace Menu_Calculos
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
+            lbl1.Text = "/";
+        }
 
+        private void rb_soma_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl1.Text = "+";
+        }
+
+        private void rb_sub_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl1.Text = "-";
+        }
+
+        private void rb_multi_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl1.Text = "x";
+        }
+
+        private void rb_pot_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl1.Text = "yˣ";
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            double a = double.Parse(txt1.Text);
+            double b = double.Parse(txt2.Text);
+            if (lbl1.Text == "+")
+            {
+                lblres.Text = Convert.ToString(a + b);
+            }
+            else if(lbl1.Text == "-")
+            {
+                lblres.Text = Convert.ToString(a - b);
+            }
+            else if (lbl1.Text == "x")
+            {
+                lblres.Text = Convert.ToString(a * b);
+            }
+            else if (lbl1.Text == "/")
+            {
+                lblres.Text = Convert.ToString(a / b);
+            }
+
+            else if (lbl1.Text == "yˣ")
+            {
+                lblres.Text = Convert.ToString(Math.Pow(a, b));
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            lbl1.Text = "?";
+            lblres.Text = "?";
+            txt1.Clear();
+            txt2.Clear();
+            txt1.Focus();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
