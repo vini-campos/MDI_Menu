@@ -13,6 +13,12 @@ namespace Menu_Calculos
 {
     public partial class frmCalculadora : Form
     {
+        
+        double vNumAnter;
+        string vOperacao;
+        bool vLimparVisor;
+
+
         public frmCalculadora()
         {
             InitializeComponent();
@@ -21,15 +27,22 @@ namespace Menu_Calculos
         private void f_digitos(object sender, EventArgs e)
         {
             string digito = ((Button)sender).Text;
-            
-            if (lblVisor.Text == "0") {
-                lblVisor.Text = digito;
-            }
-            else
+
+            if (lblVisor.Text == "0" || vLimparVisor)
             {
-                lblVisor.Text += digito;
+                lblVisor.Text = "";
+                vLimparVisor = false;
             }
+            lblVisor.Text += digito;
+            
         }
+        private void f_operacoes(object sender, EventArgs e)
+        {
+            vNumAnter = double.Parse(lblVisor.Text);
+            vOperacao = ((Button)sender).Text;
+            vLimparVisor = true;
+        }
+
 
         private void btnMulti_Click(object sender, EventArgs e)
         {
@@ -48,7 +61,7 @@ namespace Menu_Calculos
 
         private void btnVirg_Click(object sender, EventArgs e)
         {
-
+            if (!lblVisor.Text.Contains(",")) lblVisor.Text += ",";
         }
 
         private void btnMaisMenos_Click(object sender, EventArgs e)
@@ -59,6 +72,41 @@ namespace Menu_Calculos
         private void frmCalculadora_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            double vNumAtual = double.Parse(lblVisor.Text);
+            switch(vOperacao)
+            {
+                case "+":
+                    lblVisor.Text = (vNumAnter + vNumAtual).ToString();
+                    break;
+                case "-":
+                    lblVisor.Text = (vNumAnter - vNumAtual).ToString();
+                    break;
+                case "x":
+                    lblVisor.Text = (vNumAnter * vNumAtual).ToString();
+                    break;
+                case "/":
+                    lblVisor.Text = (vNumAnter / vNumAtual).ToString();
+                    break;
+                case "xʸ":
+                    lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
+                    break;
+
+            }
+        }
+
+        private void btnClear1_Click(object sender, EventArgs e)
+        {
+            lblVisor.Text = "0";
+            vNumAnter = 0;
+        }
+
+        private void btnBackSpc_Click(object sender, EventArgs e)
+        {
+            lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
         }
     }
 }
