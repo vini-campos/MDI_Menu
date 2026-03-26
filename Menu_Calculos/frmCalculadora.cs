@@ -106,6 +106,7 @@ namespace Menu_Calculos
 
         private void btnBackSpc_Click(object sender, EventArgs e)
         {
+
             lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
         }
     }
