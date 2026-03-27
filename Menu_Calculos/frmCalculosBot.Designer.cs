@@ -55,7 +55,6 @@
             this.txtN2.Size = new System.Drawing.Size(100, 22);
             this.txtN2.TabIndex = 1;
             this.txtN2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtN2.TextChanged += new System.EventHandler(this.txtN2_TextChanged);
             // 
             // lblSinal
             // 
@@ -78,7 +77,6 @@
             this.lblResul2.TabIndex = 3;
             this.lblResul2.Text = "____________________";
             this.lblResul2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblResul2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblResultado
             // 
@@ -226,7 +224,6 @@
             this.Name = "frmCalculosBot";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cálculos com botões";
-            this.Load += new System.EventHandler(this.frmCalculosBot_Load);
             this.calculatorPanel.ResumeLayout(false);
             this.calculatorPanel.PerformLayout();
             this.ResumeLayout(false);

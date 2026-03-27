@@ -35,22 +35,12 @@ namespace Menu_Calculos
             lblVisor.Text += digito;
             
         }
+       
         private void f_operacoes(object sender, EventArgs e)
         {
             vNumAnter = double.Parse(lblVisor.Text);
             vOperacao = ((Button)sender).Text;
             vLimparVisor = true;
-        }
-
-
-        private void btnMulti_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSub_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnVirg_Click(object sender, EventArgs e)
@@ -77,7 +67,8 @@ namespace Menu_Calculos
                 case "x":
                     lblVisor.Text = (vNumAnter * vNumAtual).ToString();
                     break;
-                case "/":
+                case ":":
+                    //verificar divisão por zero, ainda tem que ser feito
                     lblVisor.Text = (vNumAnter / vNumAtual).ToString();
                     break;
                 case "xʸ":
@@ -86,6 +77,7 @@ namespace Menu_Calculos
 
             }
         }
+
         private void btnClear1_Click(object sender, EventArgs e)
         {
             lblVisor.Text = "0";

@@ -18,21 +18,6 @@ namespace Menu_Calculos
             InitializeComponent();
         }
         
-       
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-
-            calculatorPanel.Left = (this.ClientSize.Width - calculatorPanel.Width) / 2;
-            calculatorPanel.Top = (this.ClientSize.Height - calculatorPanel.Height) / 2;
-        } // centraliza os componentes
-        
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            OnResize(EventArgs.Empty);
-        } // essa função faz o programa iniciar centralizado
-
         private void button2_Click(object sender, EventArgs e)
         {
             lblSinal.Text = "?";
@@ -42,19 +27,9 @@ namespace Menu_Calculos
             txtN1.Focus();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnFecharTetxo_Click(object sender, EventArgs e)
         {
             Close(); // fecha a janela
-        }
-
-        private void txtN2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSomar_Click(object sender, EventArgs e)
@@ -68,7 +43,7 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só são permitidos números neste campo!");
                 button2_Click(sender, e);
             }
         }
@@ -84,7 +59,7 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só são permitidos números neste campo!");
                 button2_Click(sender, e);
             }
         }
@@ -107,7 +82,6 @@ namespace Menu_Calculos
 
         private void btn_dividir_Click(object sender, EventArgs e)
         {
-            
 
             try
             {
@@ -148,14 +122,6 @@ namespace Menu_Calculos
             }
         }
 
-        private void frmCalculosBot_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private void btnComparar_Click(object sender, EventArgs e)
         {
             try
@@ -188,7 +154,5 @@ namespace Menu_Calculos
                 button2_Click(sender, e);
             }
         }
-
-        
     }
 }

@@ -53,9 +53,9 @@
             this.grb1.Controls.Add(this.rb_sub);
             this.grb1.Controls.Add(this.rb_soma);
             this.grb1.Location = new System.Drawing.Point(18, 23);
-            this.grb1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grb1.Margin = new System.Windows.Forms.Padding(2);
             this.grb1.Name = "grb1";
-            this.grb1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grb1.Padding = new System.Windows.Forms.Padding(2);
             this.grb1.Size = new System.Drawing.Size(113, 166);
             this.grb1.TabIndex = 0;
             this.grb1.TabStop = false;
@@ -65,7 +65,7 @@
             // 
             this.rb_pot.AutoSize = true;
             this.rb_pot.Location = new System.Drawing.Point(11, 135);
-            this.rb_pot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_pot.Margin = new System.Windows.Forms.Padding(2);
             this.rb_pot.Name = "rb_pot";
             this.rb_pot.Size = new System.Drawing.Size(85, 17);
             this.rb_pot.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.rb_div.AutoSize = true;
             this.rb_div.Location = new System.Drawing.Point(11, 109);
-            this.rb_div.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_div.Margin = new System.Windows.Forms.Padding(2);
             this.rb_div.Name = "rb_div";
             this.rb_div.Size = new System.Drawing.Size(60, 17);
             this.rb_div.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.rb_multi.AutoSize = true;
             this.rb_multi.Location = new System.Drawing.Point(11, 83);
-            this.rb_multi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_multi.Margin = new System.Windows.Forms.Padding(2);
             this.rb_multi.Name = "rb_multi";
             this.rb_multi.Size = new System.Drawing.Size(85, 17);
             this.rb_multi.TabIndex = 2;
@@ -104,7 +104,7 @@
             // 
             this.rb_sub.AutoSize = true;
             this.rb_sub.Location = new System.Drawing.Point(11, 55);
-            this.rb_sub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_sub.Margin = new System.Windows.Forms.Padding(2);
             this.rb_sub.Name = "rb_sub";
             this.rb_sub.Size = new System.Drawing.Size(74, 17);
             this.rb_sub.TabIndex = 1;
@@ -117,7 +117,7 @@
             // 
             this.rb_soma.AutoSize = true;
             this.rb_soma.Location = new System.Drawing.Point(11, 29);
-            this.rb_soma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rb_soma.Margin = new System.Windows.Forms.Padding(2);
             this.rb_soma.Name = "rb_soma";
             this.rb_soma.Size = new System.Drawing.Size(58, 17);
             this.rb_soma.TabIndex = 0;
@@ -139,7 +139,7 @@
             // txt1
             // 
             this.txt1.Location = new System.Drawing.Point(225, 33);
-            this.txt1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt1.Margin = new System.Windows.Forms.Padding(2);
             this.txt1.Multiline = true;
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(93, 16);
@@ -148,7 +148,7 @@
             // txt2
             // 
             this.txt2.Location = new System.Drawing.Point(225, 63);
-            this.txt2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt2.Margin = new System.Windows.Forms.Padding(2);
             this.txt2.Multiline = true;
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(93, 18);
@@ -179,7 +179,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(307, 158);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 22);
             this.button2.TabIndex = 11;
@@ -190,7 +190,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Location = new System.Drawing.Point(240, 158);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(63, 22);
             this.btnLimpar.TabIndex = 10;
@@ -201,7 +201,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Location = new System.Drawing.Point(173, 158);
-            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalcular.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(63, 22);
             this.btnCalcular.TabIndex = 9;
@@ -224,11 +224,10 @@
             this.Controls.Add(this.txt1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.grb1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(405, 253);
             this.Name = "frmRadio";
             this.Text = "frmRadio";
-            this.Load += new System.EventHandler(this.frmRadio_Load);
             this.grb1.ResumeLayout(false);
             this.grb1.PerformLayout();
             this.ResumeLayout(false);

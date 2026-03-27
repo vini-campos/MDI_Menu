@@ -273,7 +273,6 @@
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(37, 28);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
             // blocoDeNotasToolStripMenuItem
             // 
@@ -443,8 +442,6 @@
             this.Text = "MDI_Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDI_Menu_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MDI_Menu_FormClosed);
-            this.Load += new System.EventHandler(this.MDI_Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

@@ -17,11 +17,6 @@ namespace Menu_Calculos
             InitializeComponent();
         }
 
-        private void frmRadio_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             lbl1.Text = "/";

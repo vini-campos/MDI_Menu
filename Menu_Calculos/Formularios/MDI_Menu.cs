@@ -18,16 +18,6 @@ namespace Menu_Calculos.Formularios
             InitializeComponent();
         }
 
-        private void MDI_Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void OpenChildForm<T>() where T : Form, new()
         {
             var existingForm = this.MdiChildren.FirstOrDefault(f => f is T);
@@ -52,10 +42,6 @@ namespace Menu_Calculos.Formularios
             OpenChildForm<frmCalculosBot>(); // ChildForm é o tipo do formulário filho
         }
 
-        private void MDI_Menu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-
         private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Deseja realmente sair?", "Saindo...",
@@ -68,7 +54,7 @@ namespace Menu_Calculos.Formularios
 
         private void Mensagem(object sender, EventArgs e)
         {
-
+            //Anderson ainda não explicou nada sobre isso, então não sei o que fazer aqui
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -119,7 +105,6 @@ namespace Menu_Calculos.Formularios
         private void verticalmenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi(MdiLayout.TileVertical);
-
         }
 
         private void visorÙnicoToolStripMenuItem_Click(object sender, EventArgs e)
