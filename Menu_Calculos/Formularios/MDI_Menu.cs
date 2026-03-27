@@ -34,8 +34,6 @@ namespace Menu_Calculos.Formularios
 
             if (existingForm != null)
             {
-                // Se já existe, traz para frente e ativa
-                existingForm.BringToFront();
                 existingForm.Activate();
             }
             else
@@ -53,14 +51,14 @@ namespace Menu_Calculos.Formularios
         {
             OpenChildForm<frmCalculosBot>(); // ChildForm é o tipo do formulário filho
         }
-        
+
         private void MDI_Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
         }
 
         private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Deseja REALMENTE sair?", "Saindo...",
+            if (MessageBox.Show("Deseja realmente sair?", "Saindo...",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2) == DialogResult.No)
             {
@@ -78,6 +76,11 @@ namespace Menu_Calculos.Formularios
             staHora.Text = "Data e Hora: " + DateTime.Now.ToString();
         }
 
+        private void staUsuario_Click(object sender, EventArgs e)
+        {
+            staUsuario.Text = "Usuário: " + Environment.UserName;
+        }
+
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm<frmCalculosBot>(); // ChildForm é o tipo do formulário filho
@@ -86,6 +89,11 @@ namespace Menu_Calculos.Formularios
         private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm<frmRadio>();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm<frmCalculadora>();
         }
 
         private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,6 +125,11 @@ namespace Menu_Calculos.Formularios
         private void visorÙnicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm<frmCalculadora>();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm<frmRadio>();
         }
     }
 }

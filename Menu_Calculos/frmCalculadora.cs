@@ -18,7 +18,6 @@ namespace Menu_Calculos
         string vOperacao;
         bool vLimparVisor;
 
-
         public frmCalculadora()
         {
             InitializeComponent();
@@ -54,11 +53,6 @@ namespace Menu_Calculos
 
         }
 
-        private void btnDiv_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVirg_Click(object sender, EventArgs e)
         {
             if (!lblVisor.Text.Contains(",")) lblVisor.Text += ",";
@@ -66,12 +60,7 @@ namespace Menu_Calculos
 
         private void btnMaisMenos_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void frmCalculadora_Load(object sender, EventArgs e)
-        {
-
+            lblVisor.Text = (double.Parse(lblVisor.Text) * -1).ToString();
         }
 
         private void btnResult_Click(object sender, EventArgs e)
@@ -97,17 +86,22 @@ namespace Menu_Calculos
 
             }
         }
-
         private void btnClear1_Click(object sender, EventArgs e)
         {
             lblVisor.Text = "0";
             vNumAnter = 0;
         }
 
+        private void btnClear2_Click(object sender, EventArgs e)
+        {
+            //fazer essa porra que não funciona
+        }
+
         private void btnBackSpc_Click(object sender, EventArgs e)
         {
 
             lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+            if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
         }
     }
 }
