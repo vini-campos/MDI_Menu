@@ -103,5 +103,10 @@ namespace Menu_Calculos
             lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
             if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
         }
+
+        private void frmCalculadora_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
