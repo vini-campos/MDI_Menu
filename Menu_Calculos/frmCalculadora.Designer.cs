@@ -53,6 +53,7 @@
             this.btnClear1 = new System.Windows.Forms.Button();
             this.btnClear2 = new System.Windows.Forms.Button();
             this.btnBackSpc = new System.Windows.Forms.Button();
+            this.lblContas = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -202,10 +203,9 @@
             // lblVisor
             // 
             this.lblVisor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblVisor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblVisor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblVisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVisor.Location = new System.Drawing.Point(10, 14);
+            this.lblVisor.Location = new System.Drawing.Point(10, 21);
             this.lblVisor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVisor.Name = "lblVisor";
             this.lblVisor.Size = new System.Drawing.Size(207, 46);
@@ -369,6 +369,19 @@
             this.btnBackSpc.UseVisualStyleBackColor = false;
             this.btnBackSpc.Click += new System.EventHandler(this.btnBackSpc_Click);
             // 
+            // lblContas
+            // 
+            this.lblContas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblContas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContas.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lblContas.Location = new System.Drawing.Point(10, 9);
+            this.lblContas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContas.Name = "lblContas";
+            this.lblContas.Size = new System.Drawing.Size(207, 24);
+            this.lblContas.TabIndex = 1;
+            this.lblContas.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // frmCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +391,7 @@
             this.Controls.Add(this.btnBackSpc);
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.lblContas);
             this.Controls.Add(this.lblVisor);
             this.Controls.Add(this.btnClear2);
             this.Controls.Add(this.btnClear1);
@@ -419,5 +433,6 @@
         private System.Windows.Forms.Button btnClear1;
         private System.Windows.Forms.Button btnClear2;
         private System.Windows.Forms.Button btnBackSpc;
+        private System.Windows.Forms.Label lblContas;
     }
 }
