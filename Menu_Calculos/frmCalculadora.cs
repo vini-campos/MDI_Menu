@@ -41,6 +41,8 @@ namespace Menu_Calculos
             vNumAnter = double.Parse(lblVisor.Text);
             vOperacao = ((Button)sender).Text;
             vLimparVisor = true;
+            if (vOperacao == "xʸ") lblContas.Text = vNumAnter + " " + "^";
+            else lblContas.Text = vNumAnter + " " + vOperacao;
         }
 
         private void btnVirg_Click(object sender, EventArgs e)
@@ -77,11 +79,13 @@ namespace Menu_Calculos
                         lblVisor.Text = (vNumAnter / vNumAtual).ToString();
                     break;
                 case "xʸ":
+                    vOperacao = "^";
                     lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
                     break;
 
             }
-            vOperacao = "";
+
+            lblContas.Text = vNumAnter + " " + vOperacao + " " + vNumAtual;
             vLimparVisor = true;
         }
 
@@ -89,6 +93,7 @@ namespace Menu_Calculos
         {
             lblVisor.Text = "0";
             vNumAnter = 0;
+            lblContas.Text = "";
         }
 
         private void btnClear2_Click(object sender, EventArgs e)
