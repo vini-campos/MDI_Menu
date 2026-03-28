@@ -68,14 +68,21 @@ namespace Menu_Calculos
                     lblVisor.Text = (vNumAnter * vNumAtual).ToString();
                     break;
                 case ":":
-                    //verificar divisão por zero, ainda tem que ser feito
-                    lblVisor.Text = (vNumAnter / vNumAtual).ToString();
+                    if (vNumAtual == 0)
+                    {
+                        MessageBox.Show("Não é possível dividir por zero!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        lblVisor.Text = "0";
+                    }
+                    else
+                        lblVisor.Text = (vNumAnter / vNumAtual).ToString();
                     break;
                 case "xʸ":
                     lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
                     break;
 
             }
+            vOperacao = "";
+            vLimparVisor = true;
         }
 
         private void btnClear1_Click(object sender, EventArgs e)
@@ -86,7 +93,8 @@ namespace Menu_Calculos
 
         private void btnClear2_Click(object sender, EventArgs e)
         {
-            //fazer essa porra que não funciona
+            lblVisor.Text = "0";
+            vLimparVisor = true;
         }
 
         private void btnBackSpc_Click(object sender, EventArgs e)
