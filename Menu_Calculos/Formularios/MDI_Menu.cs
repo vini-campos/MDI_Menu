@@ -28,7 +28,6 @@ namespace Menu_Calculos.Formularios
             }
             else
             {
-                // Se não existe, cria e exibe
                 var newForm = new T
                 {
                     MdiParent = this,
@@ -39,7 +38,7 @@ namespace Menu_Calculos.Formularios
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            OpenChildForm<frmCalculosBot>(); // ChildForm é o tipo do formulário filho
+            OpenChildForm<frmCalculosBot>();
         }
 
         private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -62,14 +61,14 @@ namespace Menu_Calculos.Formularios
             staHora.Text = "Data e Hora: " + DateTime.Now.ToString();
         }
 
-        private void staUsuario_Click(object sender, EventArgs e)
+        private void staUsuario_Load(object sender, EventArgs e)
         {
             staUsuario.Text = "Usuário: " + Environment.UserName;
         }
 
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm<frmCalculosBot>(); // ChildForm é o tipo do formulário filho
+            OpenChildForm<frmCalculosBot>();
         }
 
         private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +114,24 @@ namespace Menu_Calculos.Formularios
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             OpenChildForm<frmRadio>();
+        }
+
+        private void navegadorWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "https://google.com";
+            Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
+
+        private void desenvolvedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Desenvolvido por Vinicius e Caio", "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Projeto de Mdi menu com calculadoras desenvolvido como trabalho da matéria Desenvolvimento de sistemas",
+                "Sobre", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
