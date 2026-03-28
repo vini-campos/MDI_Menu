@@ -387,7 +387,6 @@
             this.MinimumSize = new System.Drawing.Size(240, 359);
             this.Name = "frmCalculadora";
             this.Text = "Calculadora Visor único";
-            this.Load += new System.EventHandler(this.frmCalculadora_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
