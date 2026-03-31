@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
@@ -25,7 +26,12 @@ namespace Menu_Calculos
 
         private void f_digitos(object sender, EventArgs e)
         {
+            if (lblContas.Text.StartsWith("n"))
+            {
+                lblContas.Text = "";
+            }
             string digito = ((Button)sender).Text;
+
 
             if (lblVisor.Text == "0" || vLimparVisor)
             {
@@ -58,6 +64,7 @@ namespace Menu_Calculos
         private void btnResult_Click(object sender, EventArgs e)
         {
             double vNumAtual = double.Parse(lblVisor.Text);
+            
             switch(vOperacao)
             {
                 case "+":
@@ -85,8 +92,16 @@ namespace Menu_Calculos
 
             }
 
+            if (lblVisor.Text.Length >= 13)
+            {
+                lblContas.Text = "numero muito extenso";
+                lblVisor.Text = "";
+                
+                return;
+            }
             lblContas.Text = vNumAnter + " " + vOperacao + " " + vNumAtual;
             vLimparVisor = true;
+            
         }
 
         private void btnClear1_Click(object sender, EventArgs e)
@@ -107,6 +122,22 @@ namespace Menu_Calculos
 
             lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
             if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
+        }
+
+        private void frmCalculadora_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            label1.Text = e.KeyCode.ToString();
+            Button botao = new Button();
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9 || e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                botao.Text = e.KeyCode.ToString().Substring(e.KeyCode.ToString().Length - 1);
+                f_digitos(botao, e);
+            }
         }
     }
 }
