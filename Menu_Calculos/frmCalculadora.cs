@@ -47,8 +47,8 @@ namespace Menu_Calculos
             vNumAnter = double.Parse(lblVisor.Text);
             vOperacao = ((Button)sender).Text;
             vLimparVisor = true;
-            if (vOperacao == "xʸ") lblContas.Text = vNumAnter + " " + "^";
-            else lblContas.Text = vNumAnter + " " + vOperacao;
+            if (vOperacao == "xʸ") vOperacao = "^";
+            lblContas.Text = vNumAnter + " " + vOperacao;
         }
 
         private void btnVirg_Click(object sender, EventArgs e)
@@ -85,8 +85,7 @@ namespace Menu_Calculos
                     else
                         lblVisor.Text = (vNumAnter / vNumAtual).ToString();
                     break;
-                case "xʸ":
-                    vOperacao = "^";
+                case "^":
                     lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
                     break;
 
@@ -126,17 +125,102 @@ namespace Menu_Calculos
 
         private void frmCalculadora_KeyDown(object sender, KeyEventArgs e)
         {
-            
             label1.Text = e.KeyCode.ToString();
+
             Button botao = new Button();
+
+            //esc
             if (e.KeyCode == Keys.Escape)
             {
                 Close();
             }
+
+            //numeros
             if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9 || e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
             {
                 botao.Text = e.KeyCode.ToString().Substring(e.KeyCode.ToString().Length - 1);
+                foreach(Control bot in panel1.Controls)
+                {
+                    if(((Button)bot).Text == botao.Text)
+                    {
+                        bot.BackColor = Color.Red;
+                    }
+                }
                 f_digitos(botao, e);
+            }
+
+            //backspace
+            //if (e.KeyCode == Keys.Back)
+            //{
+            //    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+            //    if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
+            //}
+
+            switch (e.KeyCode)
+            {
+                //operaçoes teclado numerico
+                case Keys.Add:
+                    botao.Text = "+";
+                    f_operacoes(botao, e);
+                    break;
+                case Keys.Subtract:
+                    botao.Text = "-";
+                    f_operacoes(botao, e);
+                    break;
+                case Keys.Multiply:
+                    botao.Text = "x";
+                    f_operacoes(botao, e);
+                    break;
+                case Keys.Divide:
+                    botao.Text = ":";
+                    f_operacoes(botao, e);
+                    break;
+
+                //operações teclado normal
+
+
+                case Keys.Back:
+                    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+                    if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
+                    break;
+
+                case Keys.Return:
+                    btnResult_Click(botao, e);
+                    break;
+
+            }
+
+            foreach (Control bot in panel1.Controls)
+            {
+                if (((Button)bot).Text == botao.Text)
+                {
+                    bot.BackColor = Color.Red;
+                }
+            }
+
+            foreach (Control bot in panel2.Controls)
+            {
+                if (((Button)bot).Text == botao.Text)
+                {
+                    bot.BackColor = Color.Red;
+                }
+            }
+
+
+
+        }
+
+        private void frmCalculadora_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            foreach(Control botao in panel1.Controls)
+            {
+                botao.BackColor = Color.Gray;
+            }
+
+            foreach (Control botao in panel2.Controls)
+            {
+                botao.BackColor = Color.White;
             }
         }
     }

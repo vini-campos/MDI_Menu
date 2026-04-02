@@ -67,6 +67,7 @@
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(57, 49);
             this.btn1.TabIndex = 0;
+            this.btn1.TabStop = false;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = false;
             this.btn1.Click += new System.EventHandler(this.f_digitos);
@@ -79,6 +80,7 @@
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(57, 49);
             this.btn2.TabIndex = 0;
+            this.btn2.TabStop = false;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = false;
             this.btn2.Click += new System.EventHandler(this.f_digitos);
@@ -91,6 +93,7 @@
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(57, 49);
             this.btn3.TabIndex = 0;
+            this.btn3.TabStop = false;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.f_digitos);
@@ -103,6 +106,7 @@
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(57, 49);
             this.btn4.TabIndex = 0;
+            this.btn4.TabStop = false;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = false;
             this.btn4.Click += new System.EventHandler(this.f_digitos);
@@ -115,6 +119,7 @@
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(57, 49);
             this.btn5.TabIndex = 0;
+            this.btn5.TabStop = false;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = false;
             this.btn5.Click += new System.EventHandler(this.f_digitos);
@@ -127,6 +132,7 @@
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(57, 49);
             this.btn6.TabIndex = 0;
+            this.btn6.TabStop = false;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = false;
             this.btn6.Click += new System.EventHandler(this.f_digitos);
@@ -139,6 +145,7 @@
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(57, 49);
             this.btn7.TabIndex = 0;
+            this.btn7.TabStop = false;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = false;
             this.btn7.Click += new System.EventHandler(this.f_digitos);
@@ -151,6 +158,7 @@
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(57, 49);
             this.btn8.TabIndex = 0;
+            this.btn8.TabStop = false;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = false;
             this.btn8.Click += new System.EventHandler(this.f_digitos);
@@ -163,6 +171,7 @@
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(57, 49);
             this.btn9.TabIndex = 0;
+            this.btn9.TabStop = false;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
             this.btn9.Click += new System.EventHandler(this.f_digitos);
@@ -175,6 +184,7 @@
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(57, 49);
             this.btn0.TabIndex = 0;
+            this.btn0.TabStop = false;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = false;
             this.btn0.Click += new System.EventHandler(this.f_digitos);
@@ -186,6 +196,7 @@
             this.btnVirg.Name = "btnVirg";
             this.btnVirg.Size = new System.Drawing.Size(57, 49);
             this.btnVirg.TabIndex = 0;
+            this.btnVirg.TabStop = false;
             this.btnVirg.Text = ",";
             this.btnVirg.UseVisualStyleBackColor = true;
             this.btnVirg.Click += new System.EventHandler(this.btnVirg_Click);
@@ -209,6 +220,7 @@
             this.btnSoma.Name = "btnSoma";
             this.btnSoma.Size = new System.Drawing.Size(57, 49);
             this.btnSoma.TabIndex = 0;
+            this.btnSoma.TabStop = false;
             this.btnSoma.Text = "+";
             this.btnSoma.UseVisualStyleBackColor = true;
             this.btnSoma.Click += new System.EventHandler(this.f_operacoes);
@@ -220,6 +232,7 @@
             this.btnSub.Name = "btnSub";
             this.btnSub.Size = new System.Drawing.Size(57, 49);
             this.btnSub.TabIndex = 0;
+            this.btnSub.TabStop = false;
             this.btnSub.Text = "-";
             this.btnSub.UseVisualStyleBackColor = true;
             this.btnSub.Click += new System.EventHandler(this.f_operacoes);
@@ -231,6 +244,7 @@
             this.btnMulti.Name = "btnMulti";
             this.btnMulti.Size = new System.Drawing.Size(57, 49);
             this.btnMulti.TabIndex = 0;
+            this.btnMulti.TabStop = false;
             this.btnMulti.Text = "x";
             this.btnMulti.UseVisualStyleBackColor = true;
             this.btnMulti.Click += new System.EventHandler(this.f_operacoes);
@@ -242,6 +256,7 @@
             this.btnDiv.Name = "btnDiv";
             this.btnDiv.Size = new System.Drawing.Size(57, 49);
             this.btnDiv.TabIndex = 0;
+            this.btnDiv.TabStop = false;
             this.btnDiv.Text = ":";
             this.btnDiv.UseVisualStyleBackColor = true;
             this.btnDiv.Click += new System.EventHandler(this.f_operacoes);
@@ -265,6 +280,7 @@
             this.btnPot.Name = "btnPot";
             this.btnPot.Size = new System.Drawing.Size(57, 49);
             this.btnPot.TabIndex = 0;
+            this.btnPot.TabStop = false;
             this.btnPot.Text = "xʸ";
             this.btnPot.UseVisualStyleBackColor = true;
             this.btnPot.Click += new System.EventHandler(this.f_operacoes);
@@ -296,6 +312,7 @@
             this.btnMaisMenos.Name = "btnMaisMenos";
             this.btnMaisMenos.Size = new System.Drawing.Size(57, 49);
             this.btnMaisMenos.TabIndex = 0;
+            this.btnMaisMenos.TabStop = false;
             this.btnMaisMenos.Text = "+/-";
             this.btnMaisMenos.UseVisualStyleBackColor = true;
             this.btnMaisMenos.Click += new System.EventHandler(this.btnMaisMenos_Click);
@@ -319,6 +336,7 @@
             this.btnClear1.Name = "btnClear1";
             this.btnClear1.Size = new System.Drawing.Size(57, 49);
             this.btnClear1.TabIndex = 0;
+            this.btnClear1.TabStop = false;
             this.btnClear1.Text = "C";
             this.btnClear1.UseVisualStyleBackColor = true;
             this.btnClear1.Click += new System.EventHandler(this.btnClear1_Click);
@@ -330,6 +348,7 @@
             this.btnClear2.Name = "btnClear2";
             this.btnClear2.Size = new System.Drawing.Size(57, 49);
             this.btnClear2.TabIndex = 0;
+            this.btnClear2.TabStop = false;
             this.btnClear2.Text = "CE";
             this.btnClear2.UseVisualStyleBackColor = true;
             this.btnClear2.Click += new System.EventHandler(this.btnClear2_Click);
@@ -343,6 +362,7 @@
             this.btnBackSpc.Name = "btnBackSpc";
             this.btnBackSpc.Size = new System.Drawing.Size(82, 49);
             this.btnBackSpc.TabIndex = 0;
+            this.btnBackSpc.TabStop = false;
             this.btnBackSpc.UseVisualStyleBackColor = false;
             this.btnBackSpc.Click += new System.EventHandler(this.btnBackSpc_Click);
             // 
@@ -373,7 +393,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(336, 492);
+            this.ClientSize = new System.Drawing.Size(336, 500);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBackSpc);
@@ -390,6 +410,7 @@
             this.Name = "frmCalculadora";
             this.Text = "Calculadora Visor único";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalculadora_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmCalculadora_KeyUp);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
