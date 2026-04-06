@@ -20,6 +20,7 @@ namespace Menu_Calculos
         
         private void button2_Click(object sender, EventArgs e)
         {
+            lblResul2.Text = " ";
             lblSinal.Text = "?";
             lblResultado.Text = "?";
             txtN1.Clear();
@@ -40,6 +41,7 @@ namespace Menu_Calculos
                 double b = double.Parse(txtN2.Text);
                 lblSinal.Text = "+"; // muda o texto
                 lblResultado.Text = (a + b).ToString(); // precisa converter pois é esperado um text
+                lblResul2.Text = " ";
             }
             catch (FormatException)
             {
@@ -56,6 +58,7 @@ namespace Menu_Calculos
                 double b = double.Parse(txtN2.Text);
                 lblSinal.Text = "-"; // muda o texto
                 lblResultado.Text = (a - b).ToString(); // precisa converter pois é esperado um text
+                lblResul2.Text = " ";
             }
             catch (FormatException)
             {
@@ -72,6 +75,7 @@ namespace Menu_Calculos
                 double b = double.Parse(txtN2.Text);
                 lblSinal.Text = "*"; // muda o texto
                 lblResultado.Text = (a * b).ToString(); // precisa converter pois é esperado um text
+                lblResul2.Text = " ";
             }
             catch (FormatException)
             {
@@ -83,22 +87,31 @@ namespace Menu_Calculos
         private void btn_dividir_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                double a = double.Parse(txtN1.Text); // var numérica
-                double b = double.Parse(txtN2.Text);
-                lblSinal.Text = "/"; // muda o texto
-                lblResultado.Text = (a / b).ToString(); // precisa converter pois é esperado um text
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Só é permitido números neste campo!");
-                button2_Click(sender, e);
-            }
-            catch (DivideByZeroException)
+            double a = double.Parse(txtN1.Text); // var numérica
+            double b = double.Parse(txtN2.Text);
+
+            if (b == 0)
             {
                 MessageBox.Show("Não é possivel fazer divisão por zero!");
+                lblResultado.Text = "";
             }
+            else
+            {
+                try
+                {
+
+                    lblSinal.Text = "/"; // muda o texto
+                    lblResultado.Text = (a / b).ToString(); // precisa converter pois é esperado um text
+                    lblResul2.Text = " ";
+                }
+
+                catch (FormatException)
+                {
+                    MessageBox.Show("Só é permitido números neste campo!");
+                    button2_Click(sender, e);
+                }
+            }
+            
         }
 
         private void btnParImpar_Click(object sender, EventArgs e)
@@ -120,6 +133,7 @@ namespace Menu_Calculos
                 MessageBox.Show("Só é permitido números neste campo!");
                 button2_Click(sender, e);
             }
+            
         }
 
         private void btnComparar_Click(object sender, EventArgs e)
@@ -147,6 +161,7 @@ namespace Menu_Calculos
 
                 lblSinal.Text = ""; // muda o texto
                 lblResultado.Text = Exibir;
+                lblResul2.Text = " ";
             }
             catch (FormatException)
             {

@@ -44,28 +44,37 @@ namespace Menu_Calculos
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            double a = double.Parse(txt1.Text);
-            double b = double.Parse(txt2.Text);
-            if (lbl1.Text == "+")
+            try
             {
-                lblres.Text = Convert.ToString(a + b);
-            }
-            else if(lbl1.Text == "-")
-            {
-                lblres.Text = Convert.ToString(a - b);
-            }
-            else if (lbl1.Text == "x")
-            {
-                lblres.Text = Convert.ToString(a * b);
-            }
-            else if (lbl1.Text == "/")
-            {
-                lblres.Text = Convert.ToString(a / b);
-            }
+                double a = double.Parse(txt1.Text);
+                double b = double.Parse(txt2.Text);
 
-            else if (lbl1.Text == "yˣ")
+                if (lbl1.Text == "+")
+                {
+                    lblres.Text = Convert.ToString(a + b);
+                }
+                else if (lbl1.Text == "-")
+                {
+                    lblres.Text = Convert.ToString(a - b);
+                }
+                else if (lbl1.Text == "x")
+                {
+                    lblres.Text = Convert.ToString(a * b);
+                }
+                else if (lbl1.Text == "/")
+                {
+                    if (b != 0) lblres.Text = Convert.ToString(a / b);
+                }
+
+                else if (lbl1.Text == "yˣ")
+                {
+                    lblres.Text = Convert.ToString(Math.Pow(a, b));
+                }
+            }
+            catch (FormatException)
             {
-                lblres.Text = Convert.ToString(Math.Pow(a, b));
+                MessageBox.Show("Só é permitido números neste campo!");
+                btnLimpar_Click(sender, e);
             }
         }
 

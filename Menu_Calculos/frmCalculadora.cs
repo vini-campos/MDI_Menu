@@ -125,8 +125,6 @@ namespace Menu_Calculos
 
         private void frmCalculadora_KeyDown(object sender, KeyEventArgs e)
         {
-            label1.Text = e.KeyCode.ToString();
-
             Button botao = new Button();
 
             //esc
@@ -139,62 +137,70 @@ namespace Menu_Calculos
             if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9 || e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
             {
                 botao.Text = e.KeyCode.ToString().Substring(e.KeyCode.ToString().Length - 1);
-                foreach(Control bot in panel1.Controls)
-                {
-                    if(((Button)bot).Text == botao.Text)
-                    {
-                        bot.BackColor = Color.Red;
-                    }
-                }
                 f_digitos(botao, e);
             }
-
-            //backspace
-            //if (e.KeyCode == Keys.Back)
-            //{
-            //    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
-            //    if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
-            //}
-
-            switch (e.KeyCode)
+            else if (e.KeyCode == Keys.Oemcomma)
             {
-                //operaçoes teclado numerico
-                case Keys.Add:
-                    botao.Text = "+";
-                    f_operacoes(botao, e);
-                    break;
-                case Keys.Subtract:
-                    botao.Text = "-";
-                    f_operacoes(botao, e);
-                    break;
-                case Keys.Multiply:
-                    botao.Text = "x";
-                    f_operacoes(botao, e);
-                    break;
-                case Keys.Divide:
-                    botao.Text = ":";
-                    f_operacoes(botao, e);
-                    break;
-
-                //operações teclado normal
-
-
-                case Keys.Back:
-                    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
-                    if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
-                    break;
-
-                case Keys.Return:
-                    btnResult_Click(botao, e);
-                    break;
-
+                botao.Text = ",";
             }
+            else if (e.KeyCode == Keys.OemMinus)
+            {
+                botao.Text = "+/-";
+            }
+
+                switch (e.KeyCode)
+                {
+                    //operaçoes teclado numerico
+                    case Keys.Add:
+                        botao.Text = "+";
+                        f_operacoes(botao, e);
+                        break;
+                    case Keys.Subtract:
+                        botao.Text = "-";
+                        f_operacoes(botao, e);
+                        break;
+                    case Keys.Multiply:
+                        botao.Text = "x";
+                        f_operacoes(botao, e);
+                        break;
+                    case Keys.Divide:
+                        botao.Text = ":";
+                        f_operacoes(botao, e);
+                        break;
+                    case Keys.PageUp:
+                        botao.Text = "^";
+                        f_operacoes(botao, e);
+                        break;
+                    //operações teclado normal
+
+
+                    case Keys.Back:
+                        lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+                        if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
+                        break;
+
+                    case Keys.Return:
+                        btnResult_Click(botao, e);
+                        break;
+
+                    case Keys.Oemcomma:
+                        if (!lblVisor.Text.Contains(",")) lblVisor.Text += ",";
+
+                        break;
+
+                case Keys.OemMinus:
+                        btnMaisMenos_Click(botao, e);
+                    break;
+
+                }
 
             foreach (Control bot in panel1.Controls)
             {
+               
+
                 if (((Button)bot).Text == botao.Text)
                 {
-                    bot.BackColor = Color.Red;
+                    bot.BackColor = ColorTranslator.FromHtml("#bfcddb");
                 }
             }
 
@@ -202,11 +208,9 @@ namespace Menu_Calculos
             {
                 if (((Button)bot).Text == botao.Text)
                 {
-                    bot.BackColor = Color.Red;
+                    bot.BackColor = ColorTranslator.FromHtml("#bfcddb");
                 }
             }
-
-
 
         }
 
@@ -215,7 +219,7 @@ namespace Menu_Calculos
 
             foreach(Control botao in panel1.Controls)
             {
-                botao.BackColor = Color.Gray;
+                botao.BackColor = Color.White;
             }
 
             foreach (Control botao in panel2.Controls)
