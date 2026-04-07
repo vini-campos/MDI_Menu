@@ -133,5 +133,10 @@ namespace Menu_Calculos.Formularios
             MessageBox.Show("Projeto de Mdi menu com calculadoras desenvolvido como trabalho da matéria Desenvolvimento de sistemas",
                 "Sobre", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

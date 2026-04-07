@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -64,44 +65,42 @@ namespace Menu_Calculos
         private void btnResult_Click(object sender, EventArgs e)
         {
             double vNumAtual = double.Parse(lblVisor.Text);
-            
+
             switch(vOperacao)
             {
                 case "+":
-                    lblVisor.Text = (vNumAnter + vNumAtual).ToString();
+                lblVisor.Text = (vNumAnter + vNumAtual).ToString();
                     break;
                 case "-":
-                    lblVisor.Text = (vNumAnter - vNumAtual).ToString();
+                lblVisor.Text = (vNumAnter - vNumAtual).ToString();
                     break;
                 case "x":
-                    lblVisor.Text = (vNumAnter * vNumAtual).ToString();
+                lblVisor.Text = (vNumAnter * vNumAtual).ToString();
                     break;
                 case ":":
-                    if (vNumAtual == 0)
-                    {
-                        MessageBox.Show("Não é possível dividir por zero!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        lblVisor.Text = "0";
-                    }
-                    else
-                        lblVisor.Text = (vNumAnter / vNumAtual).ToString();
+                if (vNumAtual == 0)
+                {
+                    MessageBox.Show("Não é possível dividir por zero!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblVisor.Text = "0";
+                }
+                else
+                lblVisor.Text = (vNumAnter / vNumAtual).ToString();
                     break;
                 case "^":
-                    lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
+                lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
                     break;
-
             }
 
             if (lblVisor.Text.Length >= 13)
             {
                 lblContas.Text = "numero muito extenso";
                 lblVisor.Text = "";
-                
                 return;
             }
             lblContas.Text = vNumAnter + " " + vOperacao + " " + vNumAtual;
             vLimparVisor = true;
-            
         }
+        
 
         private void btnClear1_Click(object sender, EventArgs e)
         {
@@ -118,9 +117,10 @@ namespace Menu_Calculos
 
         private void btnBackSpc_Click(object sender, EventArgs e)
         {
-
             lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
             if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
+            if (lblVisor.Text.Length == 1 && lblVisor.Text.Contains("-")) lblVisor.Text = "0";
+
         }
 
         private void frmCalculadora_KeyDown(object sender, KeyEventArgs e)
@@ -173,11 +173,9 @@ namespace Menu_Calculos
                         break;
                     //operações teclado normal
 
-
                     case Keys.Back:
-                        lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
-                        if (lblVisor.Text.Length == 0) lblVisor.Text = "0";
-                        break;
+                        btnBackSpc_Click(botao, e);
+                    break;
 
                     case Keys.Return:
                         btnResult_Click(botao, e);
@@ -185,10 +183,9 @@ namespace Menu_Calculos
 
                     case Keys.Oemcomma:
                         if (!lblVisor.Text.Contains(",")) lblVisor.Text += ",";
-
                         break;
 
-                case Keys.OemMinus:
+                    case Keys.OemMinus:
                         btnMaisMenos_Click(botao, e);
                     break;
 

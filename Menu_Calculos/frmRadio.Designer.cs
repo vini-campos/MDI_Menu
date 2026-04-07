@@ -227,6 +227,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(405, 253);
             this.Name = "frmRadio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRadio";
             this.grb1.ResumeLayout(false);
             this.grb1.PerformLayout();
