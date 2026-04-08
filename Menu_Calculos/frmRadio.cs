@@ -63,7 +63,15 @@ namespace Menu_Calculos
                 }
                 else if (lbl1.Text == "/")
                 {
-                    if (b != 0) lblres.Text = Convert.ToString(a / b);
+                    if (b == 0)
+                    {
+                        MessageBox.Show("Não é possivel dividir por zero!");
+                        btnLimpar_Click(sender, e);
+                        txt1.Text = "";
+                        txt2.Text = "";
+                    }
+                    else
+                        lblres.Text = Convert.ToString(a / b);
                 }
 
                 else if (lbl1.Text == "yˣ")
