@@ -37,10 +37,10 @@ namespace Menu_Calculos
         {
             try
             {
-                double a = double.Parse(txtN1.Text); // var numérica
+                double a = double.Parse(txtN1.Text); 
                 double b = double.Parse(txtN2.Text);
-                lblSinal.Text = "+"; // muda o texto
-                lblResultado.Text = (a + b).ToString(); // precisa converter pois é esperado um text
+                lblSinal.Text = "+";
+                lblResultado.Text = (a + b).ToString();
                 lblResul2.Text = " ";
             }
             catch (FormatException)
@@ -54,10 +54,10 @@ namespace Menu_Calculos
         {
             try
             {
-                double a = double.Parse(txtN1.Text); // var numérica
+                double a = double.Parse(txtN1.Text); 
                 double b = double.Parse(txtN2.Text);
-                lblSinal.Text = "-"; // muda o texto
-                lblResultado.Text = (a - b).ToString(); // precisa converter pois é esperado um text
+                lblSinal.Text = "-"; 
+                lblResultado.Text = (a - b).ToString();
                 lblResul2.Text = " ";
             }
             catch (FormatException)
@@ -71,10 +71,10 @@ namespace Menu_Calculos
         {
             try
             {
-                double a = double.Parse(txtN1.Text); // var numérica
+                double a = double.Parse(txtN1.Text);
                 double b = double.Parse(txtN2.Text);
-                lblSinal.Text = "*"; // muda o texto
-                lblResultado.Text = (a * b).ToString(); // precisa converter pois é esperado um text
+                lblSinal.Text = "*"; 
+                lblResultado.Text = (a * b).ToString(); 
                 lblResul2.Text = " ";
             }
             catch (FormatException)
@@ -86,8 +86,7 @@ namespace Menu_Calculos
 
         private void btn_dividir_Click(object sender, EventArgs e)
         {
-
-            double a = double.Parse(txtN1.Text); // var numérica
+            double a = double.Parse(txtN1.Text); 
             double b = double.Parse(txtN2.Text);
 
             if (b == 0)
@@ -100,8 +99,8 @@ namespace Menu_Calculos
                 try
                 {
 
-                    lblSinal.Text = "/"; // muda o texto
-                    lblResultado.Text = (a / b).ToString(); // precisa converter pois é esperado um text
+                    lblSinal.Text = "/";
+                    lblResultado.Text = (a / b).ToString(); 
                     lblResul2.Text = " ";
                 }
 
@@ -118,13 +117,13 @@ namespace Menu_Calculos
         {
             try
             {
-                double a = double.Parse(txtN1.Text); // var numérica
+                double a = double.Parse(txtN1.Text); 
                 double b = double.Parse(txtN2.Text);
 
                 string typeA = (a % 2 == 0) ? "par" : "ímpar";
                 string typeB = (b % 2 == 0) ? "par" : "ímpar";
                 
-                lblSinal.Text = ""; // muda o texto
+                lblSinal.Text = "";
                 lblResul2.Text = $"{a}: {typeA}; {b}: {typeB}.";
                 lblResultado.Text = "";
             }
@@ -140,26 +139,23 @@ namespace Menu_Calculos
         {
             try
             {
-                double a = double.Parse(txtN1.Text); // var numérica
+                double a = double.Parse(txtN1.Text); 
                 double b = double.Parse(txtN2.Text);
                 string Exibir = "";
 
                 if (a > b)
                 {
                     Exibir = $"{a} > {b}";
-                    //lblResul2.Text = $"{a} > {b}";
                 } else if (a < b)
                 {
                     Exibir = $"{a} < {b}";
-                    //lblResul2.Text = $"{a} < {b}";
                 }
                 else
                 {
                     Exibir = $"{a} == {b}";
-                    //lblResul2.Text = $"{a} == {b}";
                 }
 
-                lblSinal.Text = ""; // muda o texto
+                lblSinal.Text = "";
                 lblResultado.Text = Exibir;
                 lblResul2.Text = " ";
             }

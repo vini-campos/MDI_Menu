@@ -41,7 +41,6 @@ namespace Menu_Calculos
         {
             lbl1.Text = "yˣ";
         }
-
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             try
@@ -85,7 +84,6 @@ namespace Menu_Calculos
                 btnLimpar_Click(sender, e);
             }
         }
-
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             lbl1.Text = "?";

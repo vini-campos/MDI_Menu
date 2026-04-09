@@ -17,7 +17,7 @@ namespace Menu_Calculos
     {
         
         double vNumAnter;
-        string vOperacao;
+        string vOperacao = "";
         bool vLimparVisor;
 
         public frmCalculadora()
@@ -40,7 +40,7 @@ namespace Menu_Calculos
                 vLimparVisor = false;
             }
             lblVisor.Text += digito;
-            
+            lblVisor.Focus();
         }
        
         private void f_operacoes(object sender, EventArgs e)
@@ -50,6 +50,7 @@ namespace Menu_Calculos
             vLimparVisor = true;
             if (vOperacao == "xʸ") vOperacao = "^";
             lblContas.Text = vNumAnter + " " + vOperacao;
+            lblVisor.Focus();
         }
 
         private void btnVirg_Click(object sender, EventArgs e)
@@ -64,41 +65,48 @@ namespace Menu_Calculos
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            double vNumAtual = double.Parse(lblVisor.Text);
-
-            switch(vOperacao)
+            if (vOperacao != "" && !vLimparVisor)
             {
-                case "+":
-                lblVisor.Text = (vNumAnter + vNumAtual).ToString();
-                    break;
-                case "-":
-                lblVisor.Text = (vNumAnter - vNumAtual).ToString();
-                    break;
-                case "x":
-                lblVisor.Text = (vNumAnter * vNumAtual).ToString();
-                    break;
-                case ":":
-                if (vNumAtual == 0)
+                double vNumAtual = double.Parse(lblVisor.Text);
+
+                switch (vOperacao)
                 {
-                    MessageBox.Show("Não é possível dividir por zero!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    lblVisor.Text = "0";
-                }
-                else
-                lblVisor.Text = (vNumAnter / vNumAtual).ToString();
-                    break;
-                case "^":
-                lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
-                    break;
-            }
+                    case "+":
+                        lblVisor.Text = (vNumAnter + vNumAtual).ToString();
+                        break;
+                    case "-":
+                        lblVisor.Text = (vNumAnter - vNumAtual).ToString();
+                        break;
+                    case "x":
+                        lblVisor.Text = (vNumAnter * vNumAtual).ToString();
+                        break;
+                    case ":":
+                        if (vNumAtual == 0)
+                        {
+                            MessageBox.Show("Não é possível dividir por zero!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            lblVisor.Text = "0";
+                        }
+                        else
+                            lblVisor.Text = (vNumAnter / vNumAtual).ToString();
+                        break;
+                    case "^":
+                        lblVisor.Text = Convert.ToString(Math.Pow(vNumAnter, vNumAtual));
+                        break;
 
-            if (lblVisor.Text.Length >= 13)
-            {
-                lblContas.Text = "numero muito extenso";
-                lblVisor.Text = "";
-                return;
+                    default:
+                        lblContas.Text = "";
+                        break;
+                }
+
+                if (lblVisor.Text.Length >= 13)
+                {
+                    lblContas.Text = "numero muito extenso";
+                    lblVisor.Text = "";
+                    return;
+                }
+                lblContas.Text = vNumAnter + " " + vOperacao + " " + vNumAtual;
+                vLimparVisor = true;
             }
-            lblContas.Text = vNumAnter + " " + vOperacao + " " + vNumAtual;
-            vLimparVisor = true;
         }
         
 
@@ -106,6 +114,7 @@ namespace Menu_Calculos
         {
             lblVisor.Text = "0";
             vNumAnter = 0;
+            vOperacao = "";
             lblContas.Text = "";
         }
 
@@ -154,22 +163,27 @@ namespace Menu_Calculos
                     case Keys.Add:
                         botao.Text = "+";
                         f_operacoes(botao, e);
+                        lblVisor.Focus();
                         break;
                     case Keys.Subtract:
                         botao.Text = "-";
                         f_operacoes(botao, e);
-                        break;
+                        lblVisor.Focus();
+                    break;
                     case Keys.Multiply:
                         botao.Text = "x";
                         f_operacoes(botao, e);
-                        break;
+                        lblVisor.Focus();
+                    break;
                     case Keys.Divide:
                         botao.Text = ":";
                         f_operacoes(botao, e);
-                        break;
+                        lblVisor.Focus();
+                    break;
                     case Keys.PageUp:
                         botao.Text = "^";
                         f_operacoes(botao, e);
+                        lblVisor.Focus();
                         break;
                     //operações teclado normal
 
@@ -178,7 +192,10 @@ namespace Menu_Calculos
                     break;
 
                     case Keys.Return:
+                        if (vOperacao != "" && vNumAnter != 0)
+                        {
                         btnResult_Click(botao, e);
+                        }
                         break;
 
                     case Keys.Oemcomma:
@@ -193,8 +210,6 @@ namespace Menu_Calculos
 
             foreach (Control bot in panel1.Controls)
             {
-               
-
                 if (((Button)bot).Text == botao.Text)
                 {
                     bot.BackColor = ColorTranslator.FromHtml("#bfcddb");
@@ -223,6 +238,11 @@ namespace Menu_Calculos
             {
                 botao.BackColor = Color.White;
             }
+        }
+
+        private void frmCalculadora_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
