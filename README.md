@@ -1,8 +1,9 @@
-# Mdi Menu - Windows Forms
+# Mdi Menu - Windows Forms  
+## Alunos: Vinicius Raphael e Caio Henrique
 Menu Mdi desenvolvido em sala de aula,  
 juntamente com as 3 calculadoras em conjunto com o mesmo.  
 
-## O Menu Mdi em desenvolvimento deverá conter:  
+### O Menu Mdi em desenvolvimento deverá conter:  
 - Calculadora com Buttons
 - Calculadora com Radio buttons
 - Calculadora de visor único, como a do próprio windows  
